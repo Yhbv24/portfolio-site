@@ -1,4 +1,4 @@
-// Site colors: #BBBAC6 (Gray), #E2E2E2 (Platinum), #B7CECE (Pastel Blue), #6E7E85 (Aurometalsaurus), #1C0F13 (Licorice)
+// 6B5E62 - brown color
 
 body {
   margin: 0;
@@ -8,7 +8,7 @@ body {
   font-size: 1.5em;
 }
 
-nav {
+#nav-menu {
   height: 70px;
   margin: 0;
   padding: 0;
@@ -39,24 +39,34 @@ nav {
     padding: 50px;
     text-align: justify;
   }
-  #club-manager {
+  #club-manager,
+  #bob-ross,
+  #shoe-manager,
+  #message-board {
     font-family: 'Yantramanav', sans-serif;
     display: inline-block;
     width: 50%;
     height: 50%;
-    background-color: #BBBAC6;
     &:hover {
       cursor: pointer;
     }
+  }
+  #club-manager {
+    background-color: #C9F0FF;
+    float: left;
   }
   #bob-ross {
-    font-family: 'Yantramanav', sans-serif;
-    display: inline-block;
-    width: 50%;
-    height: 50%;
-    background-color: #E2E2E2;
-    &:hover {
-      cursor: pointer;
-    }
+    background-color: #EFEFF0;
   }
+  #shoe-manager {
+    background-color: #EAFFFD;
+    float: left;
+  }
+  #message-board {
+    background-color: #D5CAD6;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
 }

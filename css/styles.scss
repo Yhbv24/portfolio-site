@@ -1,3 +1,5 @@
+// Site colors: #BBBAC6 (Gray), #E2E2E2 (Platinum), #B7CECE (Pastel Blue), #6E7E85 (Aurometalsaurus), #1C0F13 (Licorice)
+
 body {
   margin: 0;
   padding: 0;
@@ -15,7 +17,7 @@ nav {
     float: left;
   }
   ul {
-    margin: 0 50px;
+    margin: 0;
     padding: 0;
   }
   li {
@@ -32,22 +34,29 @@ nav {
   }
 }
 
-#home,
 #work {
-  height: 100vh;
-}
-
-#work {
-  #club-manager,
-  #bob-ross,
-  #shoe-manager {
-    margin: 20px;
-    padding: 20px;
-    display: inline-block;
+  .center-text {
+    padding: 50px;
+    text-align: justify;
   }
   #club-manager {
-    width: 45%;
-    height: 45%;
-    background-color: red;
+    font-family: 'Yantramanav', sans-serif;
+    display: inline-block;
+    width: 50%;
+    height: 50%;
+    background-color: #BBBAC6;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  #bob-ross {
+    font-family: 'Yantramanav', sans-serif;
+    display: inline-block;
+    width: 50%;
+    height: 50%;
+    background-color: #E2E2E2;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

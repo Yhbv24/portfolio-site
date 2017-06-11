@@ -1,6 +1,8 @@
 $(function() {
   $('#nav-menu').hide();
+  $('#ham-menu').hide();
   menuLoad();
+  menuToggle();
   $(document).on('click', 'a[href^="#"]', function(e) {
     var id = $(this).attr('href');
     var $id = $(id);
@@ -11,26 +13,67 @@ $(function() {
     var pos = $id.offset().top;
     $('body, html').animate({scrollTop: pos});
   });
+  hamMenuToggle();
 });
 
 function menuLoad() {
   $('#nav-menu').fadeIn(750);
 }
 
-function clubManagerHover() {
-  $('#club-manager').on('mouseenter', function() {
-    $('<div id="club-text"><h3>Hockey Club Manager</h3><h6>Technologies used for this project: HTML | CSS | Angular 2 | Firebase</h6><p>The goal of this project was to make use of a persistant database using Firebase and Angularfire for Angular 2. The app has full CRUD functionality, and a password protected admin backend to manage the team. Non-admin users are able to view the full team roster, and click on each member to see more information about that particular player through the use of dynamic routing.</p></div>')
-    .css({
-      'background-image': 'none',
-      'background-color': '#BBBAC6'
-    })
-    .hide()
-    .appendTo($(this))
-    .fadeIn(250);
+function hamMenuToggle() {
+  var clicked = false;
+  $('#ham-menu').on('click', function() {
+    if (!clicked) {
+      clicked = true;
+      $(this).css({
+        'transform': 'rotate(90deg)',
+        'transition': '0.5s',
+        'margin-top': '7px'
+      });
+      $('#home, #work, #about').css({
+        'position': 'relative'
+      });
+      $('#home, #work, #about').animate({
+        left: '200px'
+      });
+      $('#ham-menu-items').animate({
+        left: 0
+      });
+    } else {
+      clicked = false;
+      $(this).css({
+        'transform': 'rotate(0deg)',
+        'transition': '0.5s',
+        'margin-top': '7px'
+      });
+      $('#home, #work, #about').css({
+        'position': 'relative'
+      });
+      $('#home, #work, #about').animate({
+        left: '0'
+      });
+      $('#ham-menu-items').animate({
+        left: '-200px'
+      });
+    }
   });
-  $('#club-manager').on('mouseleave', function() {
-    $('#club-text').fadeOut(250, function() {
-      $(this).remove();
-    });
+}
+
+function menuToggle() {
+  if ($(window).width() < 768) {
+    $('#nav-reg-menu').hide();
+    $('#ham-menu').show();
+  } else {
+    $('#nav-reg-menu').show();
+    $('#ham-menu').hide();
+  }
+  $(window).on('resize', function() {
+    if ($(window).width() < 768) {
+      $('#nav-reg-menu').hide();
+      $('#ham-menu').show();
+    } else {
+      $('#nav-reg-menu').show();
+      $('#ham-menu').hide();
+    }
   });
 }

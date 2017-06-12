@@ -1,11 +1,10 @@
-// 6B5E62 - brown color
-
 body {
   margin: 0;
   padding: 0;
   font-family: 'Work Sans', sans-serif;
   font-weight: 100;
   font-size: 1.5em;
+  // color: #6B5E62;
 }
 
 #nav-menu {
@@ -43,12 +42,26 @@ body {
 #ham-menu-items {
   position: fixed;
   top: 80px;
-  left: -500px;
+  left: -200px;
   height: 100%;
   text-align: left;
+  overflow-x: hidden;
+  display: none;
   li {
     display: block;
   }
+}
+
+#home h4 {
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: 300;
+  width: 40%;
+  position: relative;
+  left: 125px;
+  padding: 10px;
+  margin: 20px 20px 70px 20px;
+  border-left: 1px solid black;
+  text-align: justify;
 }
 
 #work {
@@ -103,5 +116,18 @@ body {
       height: 70px;
       margin: 5px 10px 0 10px;
     }
+  }
+
+  #home h4 {
+    font-family: 'Yantramanav', sans-serif;
+    font-weight: 300;
+    width: 70%;
+    height: 20%;
+    padding: 10px;
+    margin: 20px auto;
+    text-align: justify;
+    border-left: 0;
+    position: relative;
+    left: 0;
   }
 }

@@ -77,20 +77,20 @@ body {
     display: inline-block;
     width: 50%;
     height: 50%;
+    float: left;
+    min-height: 650px;
     &:hover {
       cursor: pointer;
     }
   }
   #club-manager {
     background-color: #C9F0FF;
-    float: left;
   }
   #bob-ross {
     background-color: #EFEFF0;
   }
   #shoe-manager {
     background-color: #EAFFFD;
-    float: left;
   }
   #message-board {
     background-color: #D5CAD6;
@@ -107,6 +107,7 @@ body {
       display: block;
       width: 100%;
       float: left;
+      min-height: 0;
     }
   }
 
@@ -124,7 +125,7 @@ body {
     width: 70%;
     height: 20%;
     padding: 10px;
-    margin: 20px auto;
+    margin: 20px auto 70px auto;
     text-align: justify;
     border-left: 0;
     position: relative;

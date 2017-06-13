@@ -3,3 +3,5 @@ css/styles.css.map
 js/jquery-3.2.1.min.js
 assets/.DS_Store
 .sass-cache/
+js/scripts.min.js
+css/styles.min.css

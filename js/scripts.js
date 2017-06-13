@@ -1,10 +1,13 @@
 $(function() {
   $('#nav-menu').hide();
   $('#ham-menu').hide();
+  $('.project-info').hide();
   menuLoad();
   menuToggle();
   hamMenuToggle();
-  smoothScroll()
+  smoothScroll();
+  projectInfoShow();
+  projectInfoClose();
 });
 
 function menuLoad() {
@@ -85,5 +88,35 @@ function smoothScroll() {
     e.preventDefault();
     var pos = $id.offset().top;
     $('body, html').animate({scrollTop: pos});
+  });
+}
+
+function projectInfoShow() {
+  $('#club-manager .learn-more-button').on('click', function() {
+    $('#club-manager .project-info').slideToggle();
+  });
+  $('#bob-ross .learn-more-button').on('click', function() {
+    $('#bob-ross .project-info').slideToggle();
+  });
+  $('#shoe-manager .learn-more-button').on('click', function() {
+    $('#shoe-manager .project-info').slideToggle();
+  });
+  $('#message-board .learn-more-button').on('click', function() {
+    $('#message-board .project-info').slideToggle();
+  });
+}
+
+function projectInfoClose() {
+  $('#club-manager .close-learn-more').on('click', function() {
+    $('#club-manager .project-info').slideToggle();
+  });
+  $('#bob-ross .close-learn-more').on('click', function() {
+    $('#bob-ross .project-info').slideToggle();
+  });
+  $('#shoe-manager .close-learn-more').on('click', function() {
+    $('#shoe-manager .project-info').slideToggle();
+  });
+  $('#message-board .close-learn-more').on('click', function() {
+    $('#message-board .project-info').slideToggle();
   });
 }

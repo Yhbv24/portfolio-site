@@ -8,7 +8,6 @@ $(function() {
   smoothScroll();
   projectInfoShow();
   projectInfoClose();
-  showTitlesOnScroll();
 });
 
 function menuLoad() {
@@ -17,44 +16,40 @@ function menuLoad() {
 
 function hamMenuToggle() {
   var clicked = false;
-  $('#ham-menu').on('click', function() {
+  $('#ham-menu, .close-nav').on('click', function() {
     if (!clicked) {
       clicked = true;
-      $(this).css({
+      $('#ham-menu').css({
         'transform': 'rotate(-90deg)',
         'transition': '0.5s',
         'margin-top': '7px'
       });
       $('#home, #work, #about').css({
         'position': 'relative'
-      });
-      $('#home, #work, #about').animate({
-        left: '200px'
-      });
-      $('#ham-menu-items').css({
-        'display': 'block',
       })
       .animate({
-        left: 0
+        left: '200px',
+      });
+      $('#ham-menu-items').animate({
+        left: 0,
+        opacity: 1
       });
     } else {
       clicked = false;
-      $(this).css({
+      $('#ham-menu').css({
         'transform': 'rotate(0deg)',
         'transition': '0.5s',
         'margin-top': '7px'
       });
       $('#home, #work, #about').css({
         'position': 'relative'
-      });
-      $('#home, #work, #about').animate({
-        left: '0'
-      });
-      $('#ham-menu-items').css({
-        'display': 'none',
       })
       .animate({
-        left: '-200px'
+        left: '0',
+      });
+      $('#ham-menu-items').animate({
+        left: '-200px',
+        opacity: 0
       });
     }
   });
@@ -97,7 +92,7 @@ function projectInfoShow() {
     $('#club-manager .project-info').slideToggle();
     $('#club-manager .close-learn-more').animate({
       opacity: 1
-    }, 500);
+    }, 500).addClass('open-rotate').removeClass('close-rotate');
   });
   $('#bob-ross .learn-more-button').on('click', function() {
     $('#bob-ross .project-info').slideToggle();
@@ -109,13 +104,13 @@ function projectInfoShow() {
     $('#shoe-manager .project-info').slideToggle();
     $('#shoe-manager .close-learn-more').animate({
       opacity: 1
-    }, 500);
+    }, 500).addClass('open-rotate').removeClass('close-rotate');
   });
   $('#message-board .learn-more-button').on('click', function() {
     $('#message-board .project-info').slideToggle();
     $('#message-board .close-learn-more').animate({
       opacity: 1
-    }, 500);
+    }, 500).addClass('open-rotate').removeClass('close-rotate');
   });
 }
 
@@ -124,7 +119,7 @@ function projectInfoClose() {
     $('#club-manager .project-info').slideToggle();
     $('#club-manager .close-learn-more').animate({
       opacity: 0
-    }, 500);
+    }, 500).addClass('close-rotate').removeClass('open-rotate');
   });
   $('#bob-ross .close-learn-more').on('click', function() {
     $('#bob-ross .project-info').slideToggle();
@@ -136,27 +131,27 @@ function projectInfoClose() {
     $('#shoe-manager .project-info').slideToggle();
     $('#shoe-manager .close-learn-more').animate({
       opacity: 0
-    }, 500);
+    }, 500).addClass('close-rotate').removeClass('open-rotate');
   });
   $('#message-board .close-learn-more').on('click', function() {
     $('#message-board .project-info').slideToggle();
     $('#message-board .close-learn-more').animate({
       opacity: 0
-    }, 500);
+    }, 500).addClass('close-rotate').removeClass('open-rotate');
   });
 }
 
-function showTitlesOnScroll() {
-  $(window).scroll(function(i) {
-    if ($(window).scrollTop() >= 100) {
-      $('#club-manager h3').css({
-        'display': 'inline'
-      });
-      setTimeout(function() {
-        $('#bob-ross h3').css({
-          'display': 'inline'
-        });
-      });
-    }
-  });
-}
+// function showTitlesOnScroll() {
+//   $(window).scroll(function(i) {
+//     if ($(window).scrollTop() >= 100) {
+//       $('#club-manager h3').css({
+//         'display': 'inline'
+//       });
+//       setTimeout(function() {
+//         $('#bob-ross h3').css({
+//           'display': 'inline'
+//         });
+//       });
+//     }
+//   });
+// }

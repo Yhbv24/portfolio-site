@@ -6,6 +6,13 @@ body {
   font-size: 1.5em;
 }
 
+.close-nav {
+  height: 35px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 #nav-menu {
   font-size: 1.4em;
   margin: 20px 0 20px 0;
@@ -22,7 +29,7 @@ body {
     display: inline-block;
     padding: 10px;
     margin: 10px;
-    &:hover {
+    &:hover:not(:first-child) {
       border-bottom: 1px solid black;
     }
   }
@@ -44,7 +51,7 @@ body {
   height: 100%;
   text-align: left;
   overflow-x: hidden;
-  display: none;
+  opacity: 0;
   li {
     display: block;
   }
@@ -65,26 +72,6 @@ body {
 #work {
   clear: left;
   margin-bottom: 50px;
-  .center-text {
-    padding: 30px;
-    text-align: justify;
-    position: absolute;
-    height: auto;
-    h3 {
-      font-weight: 600;
-      font-size: 1.7em;
-      margin-bottom: -30px;
-      display: none;
-    }
-    h6 {
-      margin: 0;
-    }
-    p {
-      margin: 15px 0 0;
-      font-size: 0.9em;
-      line-height: 1.4em;
-    }
-  }
   #club-manager,
   #bob-ross,
   #shoe-manager,
@@ -95,14 +82,20 @@ body {
     min-height: 515px;
     float: left;
     position: relative;
-    p, h6, h3:not(.learn-more-button h3) {
-      padding: 0 10px 50px 10px;
-    }
-    h3 {
-      margin-top: 0;
-    }
-    p:not(.center-text) {
-      margin-bottom: 35%;
+    .center-text {
+      padding: 30px;
+      text-align: justify;
+      position: absolute;
+      height: auto;
+      p, h6, h3:not(.learn-more-button h3) {
+        padding: 0 10px 10px 10px;
+      }
+      h3 {
+        margin-top: 0;
+      }
+      p:not(.center-text) {
+        margin-bottom: 35%;
+      }
     }
   }
   #club-manager {
@@ -120,6 +113,7 @@ body {
 }
 
 #footer {
+  clear: both;
   h4 {
     font-family: 'Yantramanav', sans-serif;
     font-weight: 300;

@@ -4,3 +4,6 @@ assets/.DS_Store
 .sass-cache/
 js/scripts.min.js
 css/styles.min.css
+firebase.json
+.firebaserc
+public/

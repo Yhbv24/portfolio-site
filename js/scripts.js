@@ -8,6 +8,7 @@ $(function() {
   smoothScroll();
   projectInfoShow();
   projectInfoClose();
+  showTitlesOnScroll();
 });
 
 function menuLoad() {
@@ -20,7 +21,7 @@ function hamMenuToggle() {
     if (!clicked) {
       clicked = true;
       $(this).css({
-        'transform': 'rotate(90deg)',
+        'transform': 'rotate(-90deg)',
         'transition': '0.5s',
         'margin-top': '7px'
       });
@@ -60,7 +61,7 @@ function hamMenuToggle() {
 }
 
 function menuToggle() {
-  if ($(window).width() < 768) {
+  if ($(window).width() < 1024) {
     $('#nav-reg-menu').hide();
     $('#ham-menu').show();
   } else {
@@ -68,7 +69,7 @@ function menuToggle() {
     $('#ham-menu').hide();
   }
   $(window).on('resize', function() {
-    if ($(window).width() < 768) {
+    if ($(window).width() < 1024) {
       $('#nav-reg-menu').hide();
       $('#ham-menu').show();
     } else {
@@ -94,29 +95,68 @@ function smoothScroll() {
 function projectInfoShow() {
   $('#club-manager .learn-more-button').on('click', function() {
     $('#club-manager .project-info').slideToggle();
+    $('#club-manager .close-learn-more').animate({
+      opacity: 1
+    }, 500);
   });
   $('#bob-ross .learn-more-button').on('click', function() {
     $('#bob-ross .project-info').slideToggle();
+    $('#bob-ross .close-learn-more').animate({
+      opacity: 1,
+    }, 500).addClass('open-rotate').removeClass('close-rotate');
   });
   $('#shoe-manager .learn-more-button').on('click', function() {
     $('#shoe-manager .project-info').slideToggle();
+    $('#shoe-manager .close-learn-more').animate({
+      opacity: 1
+    }, 500);
   });
   $('#message-board .learn-more-button').on('click', function() {
     $('#message-board .project-info').slideToggle();
+    $('#message-board .close-learn-more').animate({
+      opacity: 1
+    }, 500);
   });
 }
 
 function projectInfoClose() {
   $('#club-manager .close-learn-more').on('click', function() {
     $('#club-manager .project-info').slideToggle();
+    $('#club-manager .close-learn-more').animate({
+      opacity: 0
+    }, 500);
   });
   $('#bob-ross .close-learn-more').on('click', function() {
     $('#bob-ross .project-info').slideToggle();
+    $('#bob-ross .close-learn-more').animate({
+      opacity: 0
+    }, 500).addClass('close-rotate').removeClass('open-rotate');
   });
   $('#shoe-manager .close-learn-more').on('click', function() {
     $('#shoe-manager .project-info').slideToggle();
+    $('#shoe-manager .close-learn-more').animate({
+      opacity: 0
+    }, 500);
   });
   $('#message-board .close-learn-more').on('click', function() {
     $('#message-board .project-info').slideToggle();
+    $('#message-board .close-learn-more').animate({
+      opacity: 0
+    }, 500);
+  });
+}
+
+function showTitlesOnScroll() {
+  $(window).scroll(function(i) {
+    if ($(window).scrollTop() >= 100) {
+      $('#club-manager h3').css({
+        'display': 'inline'
+      });
+      setTimeout(function() {
+        $('#bob-ross h3').css({
+          'display': 'inline'
+        });
+      });
+    }
   });
 }
